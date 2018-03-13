@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso jQuery Fundamental</title>
+        
+        <style>
+			body 	{ font-family:Arial, Helvetica, sans-serif; font-size:0.8em; }
+			ul 		{ margin:0; padding:0; list-style:none; width:300px;align-items:center}
+			li		{ margin-bottom:5px;display: flex;align-items: center; /*padding e etc sentido anti-horario*/
+            margin: 10px 0px 10px 0px;border: 1px solid black;padding: 5px 0px 5px 20px; }
+			li a	{ padding:10px 6px; color:#39C; text-decoration:none } 
+                
+               
+            @media(max-width: 600px){
+                
+                ul{
+                    width: 100%;
+                }
+                li{
+                    display: flex;
+                    background-image: linear-gradient(to right,rgb(0, 255, 0) 50%,rgb(255, 0, 170) 80%);
+                    justify-content: center;
+                }
+                li a{
+                    color: black;
+                    font-size: 30px;
+                }
+            }
+            
+        </style>
+
+		<script src="jquery-3.3.1.js"></script>
+        <script>
+			$( function(e) {
+                $("<li><a href='arquivo.pdf'>inserido no Jquery</a></li>").insertAfter("li:nth(0)");
+                $("<li><a href='arquivo.pdf'>inserido no Jquery2</a></li>").insertBefore("li:nth(0)");
+                
+
+                $("li a[href$='.zip']").before("<img src ='imagens/freira.jpg' class='imagens'>");
+                $("li a[href$='.pdf']").before("<img src ='imagens/fumante.jpg' class='imagens'>");
+                $(".imagens").css("width","80px").css("margin-right","15px").css("border-radius","40px");
+
+            });
+		</script>
+    </head>
+
+    <body>
+
+		<ul>
+        	<li><a href="arquivo.zip">Arquivo compactado</a></li>
+            <li><a href="arquivo.zip">Arquivo zipado</a></li>
+            <li><a href="arquivo.pdf">Documento de Texto</a></li>
+            <li><a href="arquivo.pdf">Curriculum Vitae</a></li>
+			<li><a href="arquivo.zip">Arquivo para download</a></li>            
+        </ul>
+    </body>
+</html>
